@@ -55,6 +55,8 @@
 	<input type="text" id="tax" name="tax" readonly><br><br>
 	<label for="epf">EPF 8%:</label>
 	<input type="text" id="epf" name="epf" readonly>
+	<label for="takehome">Take home salary:</label>
+	<input type="text" id="takehome" name="takehome" readonly>
 	
 	<script>
 		function calculate() {
@@ -79,8 +81,10 @@
 		  }
 
 		  const epf = monthlyIncome * 0.08;
+			const takeHomeSalary = (monthlyIncome - monthlyTax - epf).toLocaleString('en-US', {minimumFractionDigits: 2});
 		  document.getElementById("tax").value = monthlyTax.toLocaleString('en-US', {minimumFractionDigits: 2});
 		  document.getElementById("epf").value = epf.toLocaleString('en-US', {minimumFractionDigits: 2});
+			document.getElementById("take-home-salary").value = takeHomeSalary;
 		}
 	</script>
 </body>
