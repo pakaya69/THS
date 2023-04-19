@@ -58,6 +58,41 @@
 	<label for="takehome">Take home salary:</label>
 	<input type="text" id="takehome" name="takehome" readonly><br><br>
 	
+	<table id="tax-breakdown">
+		<thead>
+			<tr>
+				<th>Taxable Income</th>
+				<th>Tax Rate</th>
+				<th>Tax Amount</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Rs. 1,200,000 and below</td>
+				<td>0%</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>Rs. 1,200,001 - Rs. 1,700,000</td>
+				<td>6%</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>Rs. 1,700,001 - Rs. 2,200,000</td>
+				<td>12%</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>Rs. 2,200,001 - Rs. 2,700,000</td>
+				<td>18%</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>Rs. 2,700,001 - Rs. 3,200,000</td>
+				<td>24%</td>
+				<td>0</td>
+			</tr>
+	
 	<script>
 		function calculate() {
 		  const monthlyIncome = Number(document.getElementById("income").value);
