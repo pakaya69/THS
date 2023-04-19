@@ -79,8 +79,8 @@
 		  }
 
 		  const epf = monthlyIncome * 0.08;
-		  document.getElementById("tax").value = monthlyTax.toFixed(2);
-		  document.getElementById("epf").value = epf.toFixed(2);
+		  document.getElementById("tax").value = monthlyTax.toLocaleString('en-US', {minimumFractionDigits: 2});
+		  document.getElementById("epf").value = epf.toLocaleString('en-US', {minimumFractionDigits: 2});
 		}
 	</script>
 </body>
