@@ -87,37 +87,37 @@
 			<tr>
 				<td>Rs. 1,200,000 and below</td>
 				<td>0%</td>
-				<td>0</td>
+				<td id="tax1">0</td>
 			</tr>
 			<tr>
 				<td>Rs. 1,200,001 - Rs. 1,700,000</td>
 				<td>6%</td>
-				<td>0</td>
+				<td id="tax2">0</td>
 			</tr>
 			<tr>
 				<td>Rs. 1,700,001 - Rs. 2,200,000</td>
 				<td>12%</td>
-				<td>0</td>
+				<td id="tax3">0</td>
 			</tr>
 			<tr>
 				<td>Rs. 2,200,001 - Rs. 2,700,000</td>
 				<td>18%</td>
-				<td>0</td>
+				<td id="tax4">0</td>
 			</tr>
 			<tr>
 				<td>Rs. 2,700,001 - Rs. 3,200,000</td>
 				<td>24%</td>
-				<td>0</td>
+				<td id="tax5">0</td>
 			</tr>
 			<tr>
 				<td>Rs. 3,200,001 - Rs. 3,700,000</td>
 				<td>30%</td>
-				<td>0</td>
+				<td id="tax6">0</td>
 			</tr>
 			<tr>
 				<td>Rs. 3,700,001 and more</td>
 				<td>36%</td>
-				<td>0</td>
+				<td id="tax7">0</td>
 			</tr>
 		</tbody>
 	</table>
@@ -130,16 +130,22 @@
 
 		  if (annualIncome > 1200000 && annualIncome <= 1700000) {
 		    monthlyTax = ((annualIncome - 1200000) * 0.06 / 12);
+		    document.getElementById("tax2").textContent = monthlyTax.toLocaleString('en-US', {minimumFractionDigits: 2});
 		  } else if (annualIncome > 1700000 && annualIncome <= 2200000) {
 		    monthlyTax = (((annualIncome - 1700000) * 0.12) + 30000) / 12;
+		    document.getElementById("tax3").textContent = monthlyTax.toLocaleString('en-US', {minimumFractionDigits: 2});
 		  } else if (annualIncome > 2200000 && annualIncome <= 2700000) {
 		    monthlyTax = (((annualIncome - 2200000) * 0.18) + 90000) / 12;
+		    document.getElementById("tax4").textContent = monthlyTax.toLocaleString('en-US', {minimumFractionDigits: 2});
 		  } else if (annualIncome > 2700000 && annualIncome <= 3200000) {
 		    monthlyTax = (((annualIncome - 2700000) * 0.24) + 180000) / 12;
+		    document.getElementById("tax5").textContent = monthlyTax.toLocaleString('en-US', {minimumFractionDigits: 2});
 		  } else if (annualIncome > 3200000 && annualIncome <= 3700000) {
 		    monthlyTax = (((annualIncome - 3200000) * 0.3) + 300000) / 12;
+		    document.getElementById("tax6").textContent = monthlyTax.toLocaleString('en-US', {minimumFractionDigits: 2});
 		  } else if (annualIncome > 3700000) {
 		    monthlyTax = (((annualIncome - 3700000) * 0.36) + 450000) / 12;
+		    document.getElementById("tax7").textContent = monthlyTax.toLocaleString('en-US', {minimumFractionDigits: 2});
 		  } else if (annualIncome < 120000) {
 			monthlyTax = 0;
 		  }
