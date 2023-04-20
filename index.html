@@ -85,11 +85,6 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td>Rs. 1,200,000 and below</td>
-				<td>0%</td>
-				<td id="tax1">0</td>
-			</tr>
-			<tr>
 				<td>Rs. 1,200,001 - Rs. 1,700,000</td>
 				<td>6%</td>
 				<td id="tax2">0</td>
@@ -145,11 +140,11 @@
 		    document.getElementById("tax6").textContent = monthlyTax.toLocaleString('en-US', {minimumFractionDigits: 2});
 		  } else if (annualIncome > 3700000) {
 		    monthlyTax = (((annualIncome - 3700000) * 0.36) + 450000) / 12;
-		    document.getElementById("tax2").textContent = monthlyTax.toLocaleString('en-US', {minimumFractionDigits: 2});
-			  document.getElementById("tax3").textContent = 2500.toLocaleString('en-US', {minimumFractionDigits: 2});
-			  document.getElementById("tax4").textContent = 5000.toLocaleString('en-US', {minimumFractionDigits: 2});
-			  document.getElementById("tax5").textContent = 7500.toLocaleString('en-US', {minimumFractionDigits: 2});
-			  document.getElementById("tax6").textContent = 10000.toLocaleString('en-US', {minimumFractionDigits: 2});			  
+		    document.getElementById("tax2").textContent = 2500.toLocaleString('en-US', {minimumFractionDigits: 2});
+			  document.getElementById("tax3").textContent = 5000.toLocaleString('en-US', {minimumFractionDigits: 2});
+			  document.getElementById("tax4").textContent = 7500.toLocaleString('en-US', {minimumFractionDigits: 2});
+			  document.getElementById("tax5").textContent = 10000.toLocaleString('en-US', {minimumFractionDigits: 2});
+			  document.getElementById("tax6").textContent = 12500.toLocaleString('en-US', {minimumFractionDigits: 2});			  
 			document.getElementById("tax7").textContent = monthlyTax - 37500.toLocaleString('en-US', {minimumFractionDigits: 2});
 		  } else if (annualIncome < 120000) {
 			monthlyTax = 0;
