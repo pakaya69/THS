@@ -145,7 +145,12 @@
 		    document.getElementById("tax6").textContent = monthlyTax.toLocaleString('en-US', {minimumFractionDigits: 2});
 		  } else if (annualIncome > 3700000) {
 		    monthlyTax = (((annualIncome - 3700000) * 0.36) + 450000) / 12;
-		    document.getElementById("tax7").textContent = monthlyTax.toLocaleString('en-US', {minimumFractionDigits: 2});
+		    document.getElementById("tax2").textContent = monthlyTax.toLocaleString('en-US', {minimumFractionDigits: 2});
+			  document.getElementById("tax3").textContent = 2500.toLocaleString('en-US', {minimumFractionDigits: 2});
+			  document.getElementById("tax4").textContent = 5000.toLocaleString('en-US', {minimumFractionDigits: 2});
+			  document.getElementById("tax5").textContent = 7500.toLocaleString('en-US', {minimumFractionDigits: 2});
+			  document.getElementById("tax6").textContent = 10000.toLocaleString('en-US', {minimumFractionDigits: 2});			  
+			document.getElementById("tax7").textContent = monthlyTax - 37500.toLocaleString('en-US', {minimumFractionDigits: 2});
 		  } else if (annualIncome < 120000) {
 			monthlyTax = 0;
 		  }
