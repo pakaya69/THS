@@ -143,7 +143,35 @@
 		  document.getElementById("tax").value = monthlyTax.toLocaleString('en-US', {minimumFractionDigits: 2});
 		  document.getElementById("epf").value = epf.toLocaleString('en-US', {minimumFractionDigits: 2});
 			document.getElementById("takehome").value = (monthlyIncome - monthlyTax - epf).toLocaleString('en-US', {minimumFractionDigits: 2});
-		}
+		  // Calculate the tax breakdown
+  let taxBreakdown = [];
+  for (let i = 0; i < 7; i++) {
+    let taxableIncome = annualIncome - (i * 1200000);
+    if (taxableIncome <= 0) {
+      break;
+    }
+    let taxRate = taxRates[i];
+    let taxAmount = taxableIncome * taxRate / 100;
+    taxBreakdown.push({
+      taxableIncome: taxableIncome,
+      taxRate: taxRate,
+      taxAmount: taxAmount
+    });
+  }
+
+  // Update the chart
+  var chart = document.getElementById("tax-breakdown");
+  chart.innerHTML = "";
+  for (let i = 0; i < taxBreakdown.length; i++) {
+    var row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${taxBreakdown[i].taxableIncome}</td>
+      <td>${taxBreakdown[i].taxRate}</td>
+      <td>${taxBreakdown[i].taxAmount}</td>
+    `;
+    chart.appendChild(row);
+  }
+}
 	</script>
 </body>
 </html>
